@@ -71,7 +71,7 @@ def print_results(results_dic, results_stats_dic, model,
 
     for value in results_stats_dic:
         if value[0] == 'p':
-                print("Pet Label: {:>26}   Classifier Label: {:>30}".format(value, results_stats_dic[value]))
+                print("{:20}: {:3}".format(value, results_stats_dic[value]))
 
     if (print_incorrect_dogs and 
         ( (results_stats_dic['n_correct_dogs'] + results_stats_dic['n_correct_notdogs'])
@@ -81,7 +81,7 @@ def print_results(results_dic, results_stats_dic, model,
 
         for value in results_dic.values():
                 if value[3] != value[4]:
-                        print("{:20}: {:20}".format(value[0], value[1]))
+                        print("Pet Label: {:>30}   Classifier Label: {:>30}".format(value[0], value[1]))
 
     if (print_incorrect_breed and 
         (results_stats_dic['n_correct_dogs'] != results_stats_dic['n_correct_breed']) 
